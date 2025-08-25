@@ -1,0 +1,274 @@
+/* Fondo general de la página */
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #8f8f8f;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  font-family: Arial, sans-serif;
+  box-sizing: border-box;
+}
+
+/* Estilo del juego */
+.game {
+  width: 1200px; /* Desktop exacto */
+  height: auto;
+  padding: 40px;
+  background-color: #2e2e2e;
+  color: #e0e0e0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  overflow: hidden;
+  font-size: 16px;
+  box-sizing: border-box;
+}
+
+/* Contenedores */
+.stats {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+/* Misiones como fila en desktop */
+.missions {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+/* Contenedor de barra */
+.bar-container {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.bar-container label {
+  width: 90px;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+/* Fondo de barra */
+.bar-background {
+  flex: 0 0 25%;
+  height: 18px;
+  background-color: #555555;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+/* Barras */
+.bar {
+  height: 100%;
+  transition: width 0.3s ease;
+}
+
+.hp-bar {
+  background-color: #ff4d4d;
+}
+
+.exp-bar {
+  background-color: #9b59b6;
+}
+
+.stat-bar {
+  background-color: #58d68d;
+}
+
+/* Barra de cooldown */
+.cooldown-container {
+  height: 30px;
+  margin-top: 10px;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+/* Botones */
+button {
+  background-color: #4d4d4d;
+  color: #e0e0e0;
+  border: 1px solid #e0e0e0;
+  padding: 6px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.2s;
+  font-size: 14px;
+}
+
+button:hover {
+  background-color: #6e6e6e;
+}
+
+button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Profesiones */
+.professions {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.profession-choice {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  border: 1px solid #777;
+  border-radius: 5px;
+  padding: 10px;
+  transition: transform 0.2s;
+}
+
+.profession-choice:hover {
+  transform: scale(1.05);
+}
+
+.profession-choice img {
+  max-width: 150px;
+  max-height: 150px;
+  object-fit: contain;
+  margin-bottom: 5px;
+}
+
+.profession-choice span {
+  font-weight: bold;
+  color: #e0e0e0;
+  margin-top: 5px;
+}
+
+/* Icono al lado del nombre de profesión */
+.profession-icon {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+  margin-right: 10px;
+  vertical-align: middle;
+}
+
+/* Misiones como cuadrados */
+.mission {
+  flex: 0 0 16%;
+  border: 1px solid #777777;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: #4d4d4d;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 14px;
+}
+
+.titulo {
+  margin-inline-start: 430px;
+}
+
+.descripcion {
+  margin: 15px 0;
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+.mission p {
+  margin: 2px 0;
+  font-size: 14px;
+  white-space: nowrap;
+}
+
+/* Espacio fijo para cooldown */
+.cooldown-container p {
+  margin: 0;
+}
+
+/* Barras con números */
+.bar-container span {
+  width: 50px;
+  text-align: right;
+  font-size: 14px;
+}
+
+p {
+  margin-block-start: 9px;
+  margin-block-end: 9px;
+}
+
+h2 {
+  margin-block-start: 9px;
+}
+
+h1 {
+  margin-block-start: 0px;
+}
+
+/* --------- MEDIA QUERIES PARA MÓVILES --------- */
+@media (max-width: 768px) {
+  body {
+    align-items: flex-start;
+    padding: 0;
+  }
+
+  .game {
+    width: 100vw; /* usa todo el ancho de pantalla */
+    max-width: 100vw;
+    padding: 15px;
+    font-size: 14px;
+  }
+
+  .profession-choice img {
+    max-width: 100px;
+    max-height: 100px;
+  }
+
+  .profession-icon {
+    width: 60px;
+    height: 60px;
+  }
+
+  /* Barras ocupan todo el ancho del contenedor */
+  .bar-background {
+    flex: 1;
+  }
+
+  /* Misiones ocupan todo el ancho en columna */
+  .missions {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .mission {
+    width: 95%;
+    font-size: 13px;
+    padding: 8px;
+  }
+
+  .titulo {
+    margin-inline-start: 0;
+    text-align: center;
+  }
+
+  .bar-container label {
+    width: 70px;
+    font-size: 13px;
+  }
+
+  .bar-container span {
+    width: 40px;
+    font-size: 13px;
+  }
+
+  .cooldown-container{
+    margin-bottom: 50px;
+  }
+}
